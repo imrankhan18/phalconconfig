@@ -8,5 +8,6 @@ class Products extends Model
     public $qauntity;
     public $description;
     public $pic;
+    public $price;
 }
 ?>

@@ -11,12 +11,12 @@ class ProductsController extends Controller
     public function indexAction()
     {
         // $this->addAction();
-        
+        // $this->view->displayAction();
         
     }
     public function addAction()
     {
-        $this->view->displayAction();
+        
         $products = new Products();
         $products->assign(
             $this->request->getPost(),
@@ -24,7 +24,8 @@ class ProductsController extends Controller
                 'pic',
                 'productname',
                 'qauntity',
-                'description'
+                'description',
+                'price'
             ]
         );
         $products->save();
@@ -39,14 +40,16 @@ class ProductsController extends Controller
         <th>Name</th>
         <th>Quantity</th>
         <th>Description</th>
-        <th>Pic</th></tr>";
+        <th>Pic</th>
+        <th>Price</th></tr>";
         foreach ($products as $v) {
             // print_r($v->productid);
             $details.="<tr>
             <td>'.$v->productname.'</td>
             <td>'.$v->quantity.'</td>
             <td>'.$v->description.'</td>
-            <td>'.$v->pic.'</td></tr>";
+            <td>'.$v->pic.'</td>
+            <td>'.$v->price.'</td></tr>";
 
             
         }

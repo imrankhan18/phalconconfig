@@ -7,6 +7,6 @@ class ShopController extends Controller
 {
     public function indexAction()
     {
-        
+
     }
 }
